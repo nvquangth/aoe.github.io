@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
+        <title>AOE Ao Làng</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="top-bar">
+            <input type="text" id="gamer-1" class="name-gamer" placeholder="" value="" />
+            <input type="text" id="gamer-2" class="name-gamer gamer-2" placeholder="" />
+            <input type="text" id="result" class="result" placeholder="" />
+        </div>
+        <!--<div class="fb-info"> <img src="fb-aoe-ao-lang.png"> </div>-->
+        <div class="logo-ao-lang"><img src="logo.png" /></div>
+        <!--<div id="text-date"></div></div>-->
+        <!--<div class="left-bar"> <img src="left-bar.png"> </div>-->
+        <div class="cam">
+            <input type="text" class="name-cam" id="name-cam" placeholder="" value="" />
+        </div>
+        <div class="type">
+            <div id="type-solo" onClick="hienthi(1)" style="cursor: pointer;"></div>
+            <div id="type-22" onClick="hienthi(2)" style="cursor: pointer;"></div>
+            <div id="type-33" onClick="hienthi(3)" style="cursor: pointer;"></div>
+            <div id="type-44" onClick="hienthi(4)" style="cursor: pointer;"></div>
+        </div>
+        <div class="bang-quan">
+            <input type="text" id="team-home" class="team-home" placeholder="" value="" />
+            <input type="text" id="team-away" class="team-away" placeholder="" value="" />
+            <div id="solo">
+                <input type="text" id="solo-name-1" class="solo-name-1" placeholder="" value="" />
+                <input type="text" id="solo-quan-1" class="solo-quan-1" placeholder="" value="" />
+                <input type="text" id="solo-name-2" class="solo-name-2" placeholder="" value="" />
+                <input type="text" id="solo-quan-2" class="solo-quan-2" placeholder="" value="" />
+            </div>
+            <div id="team-2vs2" style="display: none;">
+                <input type="text" class="team-2vs2-name-1" id="team-2vs2-name-1" placeholder="" value="" />
+                <input type="text" class="team-2vs2-quan-1" id="team-2vs2-quan-1" placeholder="" value="" />
+                <input type="text" class="team-2vs2-name-2" id="team-2vs2-name-2" placeholder="" value="" />
+                <input type="text" class="team-2vs2-quan-2" id="team-2vs2-quan-2" placeholder="" value="" />
+                <input type="text" class="team-2vs2-name-3" id="team-2vs2-name-3" placeholder="" value="" />
+                <input type="text" class="team-2vs2-quan-3" id="team-2vs2-quan-3" placeholder="" value="" />
+                <input type="text" class="team-2vs2-name-4" id="team-2vs2-name-4" placeholder="" value="" />
+                <input type="text" class="team-2vs2-quan-4" id="team-2vs2-quan-4" placeholder="" value="" />
+            </div>
+            <div id="team-3vs3" style="display: none;">
+                <input type="text" class="team-3vs3-name-1" id="team-3vs3-name-1" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-1" id="team-3vs3-quan-1" placeholder="" value="" />
+                <input type="text" class="team-3vs3-name-2" id="team-3vs3-name-2" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-2" id="team-3vs3-quan-2" placeholder="" value="" />
+                <input type="text" class="team-3vs3-name-3" id="team-3vs3-name-3" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-3" id="team-3vs3-quan-3" placeholder="" value="" />
+                <input type="text" class="team-3vs3-name-4" id="team-3vs3-name-4" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-4" id="team-3vs3-quan-4" placeholder="" value="" />
+                <input type="text" class="team-3vs3-name-5" id="team-3vs3-name-5" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-5" id="team-3vs3-quan-5" placeholder="" value="" />
+                <input type="text" class="team-3vs3-name-6" id="team-3vs3-name-6" placeholder="" value="" />
+                <input type="text" class="team-3vs3-quan-6" id="team-3vs3-quan-6" placeholder="" value="" />
+            </div>
+            <div id="team-4vs4" style="display: none;">
+                <input type="text" class="team-4vs4-name-1" id="team-4vs4-name-1" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-1" id="team-4vs4-quan-1" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-2" id="team-4vs4-name-2" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-2" id="team-4vs4-quan-2" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-3" id="team-4vs4-name-3" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-3" id="team-4vs4-quan-3" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-4" id="team-4vs4-name-4" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-4" id="team-4vs4-quan-4" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-5" id="team-4vs4-name-5" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-5" id="team-4vs4-quan-5" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-6" id="team-4vs4-name-6" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-6" id="team-4vs4-quan-6" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-7" id="team-4vs4-name-7" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-7" id="team-4vs4-quan-7" placeholder="" value="" />
+                <input type="text" class="team-4vs4-name-8" id="team-4vs4-name-8" placeholder="" value="" />
+                <input type="text" class="team-4vs4-quan-8" id="team-4vs4-quan-8" placeholder="" value="" />
+                <input type="text" id="last_update" placeholder="" value="0" hidden="1" />
+            </div>
+        </div>
+        <script>
+            var _0x9ad6 = [
+                "\x67\x65\x74\x44\x61\x74\x65",
+                "\x30",
+                "\x67\x65\x74\x4D\x6F\x6E\x74\x68",
+                "\x64\x69\x73\x70\x6C\x61\x79",
+                "\x73\x74\x79\x6C\x65",
+                "\x73\x6F\x6C\x6F",
+                "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
+                "\x69\x6E\x6C\x69\x6E\x65",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32",
+                "\x6E\x6F\x6E\x65",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34",
+                "\x74\x72\x69\x6D",
+                "\x70\x61\x72\x73\x65",
+                "\x6C\x61\x73\x74\x5F\x75\x70\x64\x61\x74\x65",
+                "\x76\x61\x6C\x75\x65",
+                "\x67\x61\x6D\x65\x72\x2D\x31",
+                "\x74\x65\x61\x6D\x5F\x68\x6F\x6D\x65",
+                "\x67\x61\x6D\x65\x72\x2D\x32",
+                "\x74\x65\x61\x6D\x5F\x61\x77\x61\x79",
+                "\x72\x65\x73\x75\x6C\x74",
+                "\x6B\x65\x74\x5F\x71\x75\x61",
+                "\x6E\x61\x6D\x65\x2D\x63\x61\x6D",
+                "\x74\x65\x6E\x5F\x63\x61\x6D",
+                "\x74\x65\x61\x6D\x2D\x68\x6F\x6D\x65",
+                "\x74\x65\x61\x6D\x5F\x62\x61\x6E\x67\x5F\x71\x75\x61\x6E\x5F\x68\x6F\x6D\x65",
+                "\x74\x65\x61\x6D\x2D\x61\x77\x61\x79",
+                "\x74\x65\x61\x6D\x5F\x62\x61\x6E\x67\x5F\x71\x75\x61\x6E\x5F\x61\x77\x61\x79",
+                "\x73\x6F\x6C\x6F\x2D\x6E\x61\x6D\x65\x2D\x31",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x31",
+                "\x73\x6F\x6C\x6F\x2D\x71\x75\x61\x6E\x2D\x31",
+                "\x71\x75\x61\x6E\x5F\x31",
+                "\x73\x6F\x6C\x6F\x2D\x6E\x61\x6D\x65\x2D\x32",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x32",
+                "\x73\x6F\x6C\x6F\x2D\x71\x75\x61\x6E\x2D\x32",
+                "\x71\x75\x61\x6E\x5F\x32",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x6E\x61\x6D\x65\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x71\x75\x61\x6E\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x6E\x61\x6D\x65\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x71\x75\x61\x6E\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x6E\x61\x6D\x65\x2D\x33",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x33",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x71\x75\x61\x6E\x2D\x33",
+                "\x71\x75\x61\x6E\x5F\x33",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x6E\x61\x6D\x65\x2D\x34",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x34",
+                "\x74\x65\x61\x6D\x2D\x32\x76\x73\x32\x2D\x71\x75\x61\x6E\x2D\x34",
+                "\x71\x75\x61\x6E\x5F\x34",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x33",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x33",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x34",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x34",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x35",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x35",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x35",
+                "\x71\x75\x61\x6E\x5F\x35",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x6E\x61\x6D\x65\x2D\x36",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x36",
+                "\x74\x65\x61\x6D\x2D\x33\x76\x73\x33\x2D\x71\x75\x61\x6E\x2D\x36",
+                "\x71\x75\x61\x6E\x5F\x36",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x31",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x32",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x33",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x33",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x34",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x34",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x35",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x35",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x36",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x36",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x37",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x37",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x37",
+                "\x71\x75\x61\x6E\x5F\x37",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x6E\x61\x6D\x65\x2D\x38",
+                "\x74\x65\x6E\x5F\x67\x61\x6D\x65\x5F\x74\x68\x75\x5F\x38",
+                "\x74\x65\x61\x6D\x2D\x34\x76\x73\x34\x2D\x71\x75\x61\x6E\x2D\x38",
+                "\x71\x75\x61\x6E\x5F\x38",
+                "\x74\x68\x65\x5F\x6C\x6F\x61\x69",
+                "\x5F\x61\x6A\x61\x78\x2E\x70\x68\x70",
+                "\x58\x4D\x4C\x48\x74\x74\x70\x52\x65\x71\x75\x65\x73\x74",
+                "\x4D\x69\x63\x72\x6F\x73\x6F\x66\x74\x2E\x58\x4D\x4C\x48\x54\x54\x50",
+                "\x6F\x6E\x72\x65\x61\x64\x79\x73\x74\x61\x74\x65\x63\x68\x61\x6E\x67\x65",
+                "\x72\x65\x61\x64\x79\x53\x74\x61\x74\x65",
+                "\x73\x74\x61\x74\x75\x73",
+                "\x72\x65\x73\x70\x6F\x6E\x73\x65\x54\x65\x78\x74",
+                "\x47\x45\x54",
+                "\x6F\x70\x65\x6E",
+                "\x73\x65\x6E\x64",
+            ];
+            setDateData();
+            function setDateData() {
+                var _0xd212x2 = new Date();
+                var _0xd212x3 = _0xd212x2[_0x9ad6[0]]();
+                if (_0xd212x3 < 10) {
+                    _0xd212x3 = _0x9ad6[1] + _0xd212x3;
+                }
+                var _0xd212x4 = _0xd212x2[_0x9ad6[2]]() + 1;
+                if (_0xd212x4 < 10) {
+                    _0xd212x4 = _0x9ad6[1] + _0xd212x4;
+                }
+            }
+            function hienthi(_0xd212x6) {
+                if (_0xd212x6 == 1) {
+                    document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                    document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                } else {
+                    if (_0xd212x6 == 2) {
+                        document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                        document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    } else {
+                        if (_0xd212x6 == 3) {
+                            document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                            document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        } else {
+                            document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                        }
+                    }
+                }
+            }
+            function setData(_0xd212x8) {
+                var _0xd212x9 = _0xd212x8[_0x9ad6[12]]();
+                var _0xd212xa = JSON[_0x9ad6[13]](_0xd212x9);
+                var _0xd212xb = _0xd212xa[_0x9ad6[14]];
+                if (_0xd212xb == document[_0x9ad6[6]](_0x9ad6[14])[_0x9ad6[15]]) {
+                    return;
+                }
+                document[_0x9ad6[6]](_0x9ad6[16])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[17]];
+                document[_0x9ad6[6]](_0x9ad6[18])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[19]];
+                document[_0x9ad6[6]](_0x9ad6[20])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[21]];
+                document[_0x9ad6[6]](_0x9ad6[22])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[23]];
+                document[_0x9ad6[6]](_0x9ad6[24])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[25]];
+                document[_0x9ad6[6]](_0x9ad6[26])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[27]];
+                document[_0x9ad6[6]](_0x9ad6[28])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[29]];
+                document[_0x9ad6[6]](_0x9ad6[30])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[31]];
+                document[_0x9ad6[6]](_0x9ad6[32])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[33]];
+                document[_0x9ad6[6]](_0x9ad6[34])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[35]];
+                document[_0x9ad6[6]](_0x9ad6[36])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[29]];
+                document[_0x9ad6[6]](_0x9ad6[37])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[31]];
+                document[_0x9ad6[6]](_0x9ad6[38])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[33]];
+                document[_0x9ad6[6]](_0x9ad6[39])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[35]];
+                document[_0x9ad6[6]](_0x9ad6[40])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[41]];
+                document[_0x9ad6[6]](_0x9ad6[42])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[43]];
+                document[_0x9ad6[6]](_0x9ad6[44])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[45]];
+                document[_0x9ad6[6]](_0x9ad6[46])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[47]];
+                document[_0x9ad6[6]](_0x9ad6[48])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[29]];
+                document[_0x9ad6[6]](_0x9ad6[49])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[31]];
+                document[_0x9ad6[6]](_0x9ad6[50])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[33]];
+                document[_0x9ad6[6]](_0x9ad6[51])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[35]];
+                document[_0x9ad6[6]](_0x9ad6[52])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[41]];
+                document[_0x9ad6[6]](_0x9ad6[53])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[43]];
+                document[_0x9ad6[6]](_0x9ad6[54])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[45]];
+                document[_0x9ad6[6]](_0x9ad6[55])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[47]];
+                document[_0x9ad6[6]](_0x9ad6[56])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[57]];
+                document[_0x9ad6[6]](_0x9ad6[58])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[59]];
+                document[_0x9ad6[6]](_0x9ad6[60])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[61]];
+                document[_0x9ad6[6]](_0x9ad6[62])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[63]];
+                document[_0x9ad6[6]](_0x9ad6[64])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[29]];
+                document[_0x9ad6[6]](_0x9ad6[65])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[31]];
+                document[_0x9ad6[6]](_0x9ad6[66])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[33]];
+                document[_0x9ad6[6]](_0x9ad6[67])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[35]];
+                document[_0x9ad6[6]](_0x9ad6[68])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[41]];
+                document[_0x9ad6[6]](_0x9ad6[69])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[43]];
+                document[_0x9ad6[6]](_0x9ad6[70])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[45]];
+                document[_0x9ad6[6]](_0x9ad6[71])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[47]];
+                document[_0x9ad6[6]](_0x9ad6[72])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[57]];
+                document[_0x9ad6[6]](_0x9ad6[73])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[59]];
+                document[_0x9ad6[6]](_0x9ad6[74])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[61]];
+                document[_0x9ad6[6]](_0x9ad6[75])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[63]];
+                document[_0x9ad6[6]](_0x9ad6[76])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[77]];
+                document[_0x9ad6[6]](_0x9ad6[78])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[79]];
+                document[_0x9ad6[6]](_0x9ad6[80])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[81]];
+                document[_0x9ad6[6]](_0x9ad6[82])[_0x9ad6[15]] = _0xd212xa[_0x9ad6[83]];
+                document[_0x9ad6[6]](_0x9ad6[14])[_0x9ad6[15]] = _0xd212xb;
+                var _0xd212x6 = _0xd212xa[_0x9ad6[84]];
+                if (_0xd212x6 == 1) {
+                    document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                    document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                } else {
+                    if (_0xd212x6 == 2) {
+                        document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                        document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                    } else {
+                        if (_0xd212x6 == 3) {
+                            document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                            document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                        } else {
+                            document[_0x9ad6[6]](_0x9ad6[5])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[8])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[10])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[9];
+                            document[_0x9ad6[6]](_0x9ad6[11])[_0x9ad6[4]][_0x9ad6[3]] = _0x9ad6[7];
+                        }
+                    }
+                }
+            }
+            function setTimeGetData() {}
+            function getData() {
+                var _0xd212xe = _0x9ad6[85];
+                requestData(_0xd212xe);
+            }
+            function requestData(_0xd212x10) {
+                var _0xd212x11;
+                if (window[_0x9ad6[86]]) {
+                    _0xd212x11 = new XMLHttpRequest();
+                } else {
+                    _0xd212x11 = new ActiveXObject(_0x9ad6[87]);
+                }
+                _0xd212x11[_0x9ad6[88]] = function () {
+                    if (_0xd212x11[_0x9ad6[89]] == 4 && _0xd212x11[_0x9ad6[90]] == 200) {
+                        setData(_0xd212x11[_0x9ad6[91]]);
+                    }
+                };
+                _0xd212x11[_0x9ad6[93]](_0x9ad6[92], _0xd212x10, true);
+                _0xd212x11[_0x9ad6[94]]();
+            }
+        </script>
+        <div class="dc-disable"></div>
+        
+        
+        <script>
+            function getCookie(t) {
+                for (var e = t + "=", n = decodeURIComponent(document.cookie).split(";"), o = 0; o < n.length; o++) {
+                    for (var i = n[o]; " " == i.charAt(0); ) i = i.substring(1);
+                    if (0 == i.indexOf(e)) return i.substring(e.length, i.length);
+                }
+                return "";
+            }
+            getCookie("hostinger") && ((document.cookie = "hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;"), location.reload());
+            var wordpressAdminBody = document.getElementsByClassName("wp-admin")[0],
+                notification = document.getElementsByClassName("notice notice-success is-dismissible"),
+                hostingerLogo = document.getElementsByClassName("hlogo"),
+                mainContent = document.getElementsByClassName("notice_content")[0];
+            if (null != wordpressAdminBody && notification.length > 0 && null != mainContent) {
+                var googleFont = document.createElement("link");
+                (googleFontHref = document.createAttribute("href")),
+                    (googleFontRel = document.createAttribute("rel")),
+                    (googleFontHref.value = "https://fonts.googleapis.com/css?family=Roboto:300,400,600,700"),
+                    (googleFontRel.value = "stylesheet"),
+                    googleFont.setAttributeNode(googleFontHref),
+                    googleFont.setAttributeNode(googleFontRel);
+                var css =
+                        "@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",
+                    style = document.createElement("style"),
+                    sheet = window.document.styleSheets[0];
+                style.styleSheet ? (style.styleSheet.cssText = css) : style.appendChild(document.createTextNode(css)),
+                    document.getElementsByTagName("head")[0].appendChild(style),
+                    document.getElementsByTagName("head")[0].appendChild(googleFont);
+                var button = document.getElementsByClassName("upgrade_button_red")[0],
+                    link = button.parentElement;
+                link.setAttribute("href", "https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),
+                    (link.innerHTML = '<button class="upgrade_button_red_sale">Go for it</button>'),
+                    (notification = notification[0]).setAttribute("style", "padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),
+                    (notification.className = "notice notice-error is-dismissible");
+                var mainContentHolder = document.getElementById("main_content");
+                mainContentHolder.setAttribute("style", "padding: 0;"), hostingerLogo[0].remove();
+                var h1Tag = notification.getElementsByTagName("H1")[0];
+                (h1Tag.className = "000-h1"), (h1Tag.innerHTML = "Black Friday Prices"), h1Tag.setAttribute("style", 'color: white; font-family: "Roboto", sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase;');
+                var h2Tag = document.createElement("H2");
+                (h2Tag.innerHTML = "Get 90% Off!"),
+                    h2Tag.setAttribute("style", 'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),
+                    h1Tag.parentNode.insertBefore(h2Tag, h1Tag.nextSibling);
+                var paragraph = notification.getElementsByTagName("p")[0];
+                (paragraph.innerHTML = "Get Web Hosting for $0.99/month + SSL Certificate for FREE!"), paragraph.setAttribute("style", 'font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 15px;');
+                var list = notification.getElementsByTagName("UL")[0];
+                list.remove();
+                var org_html = mainContent.innerHTML,
+                    new_html =
+                        '<div class="content-wrapper">' +
+                        mainContent.innerHTML +
+                        '</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/bf-2020-wp-inject-img.png"></div>';
+                mainContent.innerHTML = new_html;
+                var saleImage = mainContent.getElementsByClassName("web-hosting-90-off-image")[0];
+            }
+        </script>
+    </body>
+</html>
